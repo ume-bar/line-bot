@@ -1,13 +1,16 @@
 'use strict';
 
+require('dotenv').config();
 const express = require('express');
 const line = require('@line/bot-sdk');
 const PORT = process.env.PORT || 3000;
 
 const config = {
-    channelSecret: '作成したBOTのチャンネルシークレット',
-    channelAccessToken: '作成したBOTのチャンネルアクセストークン'
+    channelSecret: process.env.CHANNEL_SECRET,
+    channelAccessToken: process.env.CHANNEL_ACCESS_TOKEN
 };
+console.log(process.env.CHANNEL_SECRET)
+console.log(process.env.CHANNEL_ACCESS_TOKEN)
 
 const app = express();
 
@@ -16,7 +19,7 @@ app.post('/webhook', line.middleware(config), (req, res) => {
     console.log(req.body.events);
 
     //ここのif分はdeveloper consoleの"接続確認"用なので削除して問題ないです。
-    if (req.body.events[0].replyToken === '00000000000000000000000000000000' && req.body.events[1].replyToken === 'ffffffffffffffffffffffffffffffff') {
+    if (req.body.events[0].replyToken === '1cdf0aa314d6038e90b7884492cd769f' && req.body.events[1].replyToken === 'ffffffffffffffffffffffffffffffff') {
         res.send('Hello LINE BOT!(POST)');
         console.log('疎通確認用');
         return;
