@@ -1,0 +1,24 @@
+{
+  "name": "line-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ume-bar/line-bot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ume-bar/line-bot/issues"
+  },
+  "homepage": "https://github.com/ume-bar/line-bot#readme",
+  "keywords": [],
+  "dependencies": {
+    "@line/bot-sdk": "^7.5.2",
+    "express": "^4.18.2"
+  }
+}
