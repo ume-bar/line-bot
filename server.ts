@@ -54,8 +54,8 @@ app.get(
     '/',
     async (_: Request, res: Response): Promise<Response> => {
         return res.status(200).json({
-            status: 'success',
-            message: 'Connected successfully!',
+            status: '成功',
+            message: '正常に接続されました!',
         });
     }
 );
@@ -79,7 +79,7 @@ app.post(
 
                     // エラーメッセージを返す
                     return res.status(500).json({
-                        status: 'error',
+                        status: 'エラー',
                     });
                 }
             })
@@ -87,7 +87,7 @@ app.post(
 
         // 成功した場合のメッセージを返す
         return res.status(200).json({
-            status: 'success',
+            status: '成功',
             results,
         });
     }
@@ -95,5 +95,5 @@ app.post(
 
 // サーバーを作成し3000listenする
 app.listen(PORT, () => {
-    console.log(`Application is live and listening on port ${PORT}`);
+    console.log(`http://localhost:${PORT}/`);
 });
